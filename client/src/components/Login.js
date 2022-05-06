@@ -1,0 +1,47 @@
+import React from 'react'
+
+const Login = ({ handleSubmit }) => {
+  const [username, setUsername] = React.useState('')
+  const [password, setPassword] = React.useState('')
+  const clearForm = () => {
+    setUsername('')
+    setPassword('')
+  }
+  return (
+    <form
+      id="login-form"
+      onSubmit={(e) => {
+        e.preventDefault()
+        handleSubmit({ username, password })
+        clearForm()
+      }}
+    >
+      <div>
+        <label htmlFor="username">Username</label>
+        <input
+          id="username"
+          type="text"
+          value={username}
+          onChange={({ target }) => {
+            setUsername(target.value)
+          }}
+        />
+      </div>
+      <div>
+        <label htmlFor="password">Password</label>
+        <input
+          id="password"
+          type="password"
+          value={password}
+          onChange={({ target }) => {
+            setPassword(target.value)
+          }}
+        />
+      </div>
+      <button id="login-btn" type="submit">
+        Login
+      </button>
+    </form>
+  )
+}
+export default Login
