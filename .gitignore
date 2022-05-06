@@ -1,0 +1,7 @@
+/node_modules
+/dist
+.env
+/coverage
+/cypress/videos
+/cypress/screeenshots
+.DS_Store
